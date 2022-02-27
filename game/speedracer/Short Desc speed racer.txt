@@ -1,0 +1,1 @@
+Key here is not to collide to each other. Keep a track of other car, changing its lane at any time, speed of car increases with game time.

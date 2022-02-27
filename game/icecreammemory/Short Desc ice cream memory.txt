@@ -1,0 +1,1 @@
+Memorize the ice cream to be made and deliver the same ice cream as required, delivering wrong ice cream, will lose a life.

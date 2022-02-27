@@ -1,0 +1,1 @@
+Burst all the similar objects in space in a sequence without breaking it. Minimum 3 matches required

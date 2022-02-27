@@ -1,0 +1,1 @@
+A typical sudoku game. Solve the puzzle in least possible time 

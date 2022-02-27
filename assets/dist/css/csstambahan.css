@@ -1,0 +1,167 @@
+/*!
+ *   AdminLTE v2.4.2
+ *   Author: Almsaeed Studio
+ *	 Website: Almsaeed Studio <https://adminlte.io>
+ *   License: Open source - MIT
+ *           Please visit http://opensource.org/licenses/MIT for more information
+ */
+/*
+ * Core: General Layout Style
+ * -------------------------
+ */
+
+/*
+ * Content Wrapper - contains the main content
+ */
+
+@media (max-width: 767px) {
+}
+@media (min-width: 768px) {
+}
+@media (max-width: 767px) {
+}
+
+@media (max-width: 767px) {
+}
+
+@media (max-width: 991px) {
+}
+@media (max-width: 767px) {
+}
+
+@media (max-width: 991px) {
+}
+
+@media (max-width: 991px) {
+}
+@media (max-width: 767px) {
+}
+@media (max-width: 991px) {
+}
+
+@media (max-width: 767px) {
+}
+@media (max-width: 767px) {
+}
+@media (min-width: 768px) {
+}
+@media (max-width: 767px) {
+}
+
+/*
+ * Component: Sidebar Mini
+ */
+@media (min-width: 768px) {
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 991px) {
+}
+
+. @media (max-width: 767px) {
+}
+
+@media (max-width: 991px) {
+}
+
+@media (max-width: 991px) {
+}
+
+@media (min-width: 768px) {
+}
+
+@media (max-width: 991px) {
+}
+
+@media (min-width: 360px) {
+    #logoid {
+        width: 10px;
+    }
+}
+@media (max-width: 360px) {
+    #logoid {
+        width: 151px !important;
+    }
+    #infopoin {
+        margin-left: 45px !important;
+        font-size: 17px;
+    }
+    #infoprotest {
+        padding: 10%;
+        margin-top: -31px;
+        font-size: 11px;
+    }
+    #btninfo {
+        width: 100px !important;
+    }
+    #btngame {
+        width: 100px !important;
+    }
+    #btntukar {
+        width: 100px !important;
+    }
+    #listgame {
+        height: 573px !important;
+    }
+}
+@media (max-width: 412px) {
+    #logoid {
+        width: 151px !important;
+    }
+
+    #table-hadiah thead tr th {
+        font-size: 10px;
+    }
+
+    #table-hadiah tbody tr td {
+        font-size: 10px;
+    }
+
+    #table-hadiah tbody tr td center a {
+        font-size: 10px;
+    }
+
+    /*info Home*/
+    #margintoppoin {
+        margin-top: 50px !important;
+    }
+    #infotitle {
+        font-size: 18px !important;
+    }
+
+    #infopoin {
+        margin-left: 45px !important;
+        font-size: 17px;
+    }
+    #infoprotest {
+        padding: 10%;
+        margin-top: -31px;
+        font-size: 11px;
+    }
+    #btninfo {
+        width: 100px !important;
+    }
+    #btngame {
+        width: 100px !important;
+    }
+    #btntukar {
+        width: 100px !important;
+    }
+    #listgame {
+        height: 680px !important;
+    }
+}
+
+@media (min-width: 360px) {
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 991px) {
+}
+
+@media (max-width: 991px) {
+}

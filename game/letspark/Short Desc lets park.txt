@@ -1,0 +1,1 @@
+Park your car to perfection without colliding to objects in the way, you lose a star on colliding with objects.
