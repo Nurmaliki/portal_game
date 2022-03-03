@@ -73,7 +73,7 @@ class Appusers_model extends CI_Model
     public function get_game()
     {
 
-        $sql    = "SELECT M_news.*,M_news_cat.id as id_cat,M_news_cat.name as name FROM M_news JOIN M_news_cat ON M_news_cat.id = M_news.category_id where M_news.status = 1"; //where m.username =
+        $sql    = "SELECT m_news.*,m_news_cat.id as id_cat,m_news_cat.name as name FROM m_news JOIN m_news_cat ON m_news_cat.id = m_news.category_id where m_news.status = 1"; //where m.username =
         $query        = $this->db->query($sql);
         $data        = $query->result_array();
         return $data;
@@ -82,7 +82,7 @@ class Appusers_model extends CI_Model
     public function get_game_limit_offset($limit, $offset)
     {
 
-        $sql    = "SELECT M_news.*,M_news_cat.id as id_cat,M_news_cat.name as name FROM M_news JOIN M_news_cat ON M_news_cat.id = M_news.category_id where M_news.status = 1 LIMIT $limit OFFSET $offset"; //where m.username =
+        $sql    = "SELECT m_news.*,m_news_cat.id as id_cat,m_news_cat.name as name FROM m_news JOIN m_news_cat ON m_news_cat.id = m_news.category_id where m_news.status = 1 LIMIT $limit OFFSET $offset"; //where m.username =
         $query        = $this->db->query($sql);
         $data        = $query->result_array();
         return $data;
@@ -91,7 +91,7 @@ class Appusers_model extends CI_Model
     public function get_game_detail($id)
     {
 
-        $sql    = "SELECT M_news.*,M_news_cat.id as id_cat,M_news_cat.name as name FROM M_news JOIN M_news_cat ON M_news_cat.id = M_news.category_id  where M_news.id = " . $id; //where m.username =
+        $sql    = "SELECT m_news.*,m_news_cat.id as id_cat,m_news_cat.name as name FROM m_news JOIN m_news_cat ON m_news_cat.id = m_news.category_id  where m_news.id = " . $id; //where m.username =
         $query        = $this->db->query($sql);
         $data        = $query->result_array();
         return $data;

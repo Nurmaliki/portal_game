@@ -33,7 +33,7 @@ class Login extends CI_Controller
     public function index()
     {
         $parseData['header']            = '';
-        $this->load->view('login', $parseData);
+        $this->load->view('new_game/login', $parseData);
     }
     public function authentication()
     {
@@ -44,33 +44,32 @@ class Login extends CI_Controller
         $admin    = $this->appusers_model->select_appusers('', $data['username'], $data['password']);
 
 
-        // $ch = curl_init();
-        // $p = base64_encode($this->input->get_post('password') . '@2020GasPOL!');
-        // $url = "http://202.159.35.83/sms/gaspol_login_api.php?k=gaspol2020&m=" . $data['username'] . "&p=" . $p . "";
-        // curl_setopt($ch, CURLOPT_URL, $url);
-        // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        // $feridisini = curl_exec($ch);
-        // $output = json_decode($feridisini, true);
-        // curl_close($ch);
+        $ch = curl_init();
+        $p = base64_encode($this->input->get_post('password') . '@2022Jet53T!');
+        $url = $this->config->item('url_api_layanan') . "?k=jetset2022&m=" . $data['username'] . "&p=" . $p . "";
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $feridisini = curl_exec($ch);
+        $output = json_decode($feridisini, true);
+        curl_close($ch);
 
-        $output["success"] = 1;
-        // $output["error"] = 0;
 
+        // $output["success"] = 1;
 
         if (isset($output["error"])) {
-            $this->session->set_flashdata('msgalert', '<div id="msgalert" style="margin-bottom: 10px; color: #f1372a; font-weight: bold;">' . $output["error"] . '</div>');
+            $this->session->set_flashdata('msgalert', '<div id="msgalert" style="margin-bottom: 10px;     color: #ff5012;    text-align: center; font-weight: bold;border-radius: 6px;    padding: 8px;">' . $output["error"] . '</div>');
             header("location: " . $this->config->item('base_url') . "login");
             die;
         } elseif (isset($output["success"])) {
             if (count($admin) > 0) {
                 if ($data['password'] == $admin[0]['password']) {
                     $data_session['user_data_web']    = array(
-                        'id'        => $admin[0]['id'],
-                        'name'        => $admin[0]['name'],
+                        'id'            => $admin[0]['id'],
+                        'name'          => $admin[0]['name'],
                         'username'      => $admin[0]['username'],
-                        'last_login' => $admin[0]['last_login'],
-                        'date_created'        => $admin[0]['date_created'],
-                        'poin'        => $admin[0]['poin']
+                        'last_login'    => $admin[0]['last_login'],
+                        'date_created'  => $admin[0]['date_created'],
+                        'poin'          => $admin[0]['poin']
                     );
                     $feriWasHere = 60 * 60000; //30 minutes
                     $this->session->sess_expiration = $feriWasHere;
@@ -148,12 +147,12 @@ class Login extends CI_Controller
 
 
                     $data_session['user_data_web']    = array(
-                        'id'        => $admin[0]['id'],
-                        'name'        => $admin[0]['name'],
+                        'id'            => $admin[0]['id'],
+                        'name'          => $admin[0]['name'],
                         'username'      => $admin[0]['username'],
-                        'last_login' => $admin[0]['last_login'],
-                        'date_created'        => $admin[0]['date_created'],
-                        'poin'        => $admin[0]['poin']
+                        'last_login'    => $admin[0]['last_login'],
+                        'date_created'  => $admin[0]['date_created'],
+                        'poin'          => $admin[0]['poin']
                     );
                     $feriWasHere = 60 * 60000; //30 minutes
                     $this->session->sess_expiration = $feriWasHere;
@@ -323,6 +322,10 @@ class Login extends CI_Controller
                 header("location: " . $this->config->item('base_url') . "?access=" . $accessKey);
                 die;
             }
+        } else {
+            $this->session->set_flashdata('msgalert', '<div id="msgalert" style="margin-bottom: 10px;    color: #ff5012;   text-align: center; font-weight: bold;border-radius: 6px;    padding: 8px;">' . $output["error"] . '</div>');
+            header("location: " . $this->config->item('base_url') . "login");
+            die;
         }
     }
 

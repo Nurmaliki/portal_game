@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 |--------------------------------------------------------------------------
@@ -25,13 +25,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $baseUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') ? 'https://' : 'http://';
 $baseUrl .= isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : getenv('HTTP_HOST');
-$baseUrl .= str_replace('\\', '/', dirname(isset($_SERVER['SCRIPT_NAME']) ? $_SERVER['SCRIPT_NAME'] : getenv('SCRIPT_NAME'))). '';
-$config['base_url'] = $baseUrl."/index.php/";
+$baseUrl .= str_replace('\\', '/', dirname(isset($_SERVER['SCRIPT_NAME']) ? $_SERVER['SCRIPT_NAME'] : getenv('SCRIPT_NAME'))) . '';
+$config['base_url'] = $baseUrl . "/index.php/";
 // $config['server']		= ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "https" : "http");
 // $config['assets_url']	= 'https://'.$_SERVER['HTTP_HOST'].'/git_maliki/poin-serbu-cms/';		// untuk URL asset CMS
-$config['assets_url']	= $baseUrl."/" ;		// untuk URL asset CMS
-$config['assets_url_portal']	= 'https://localhost/git_maliki/poin-serbu-web';  // untuk URL Microsite
-$config['assets_url_core']	= 'https://localhost';  // untuk URL API core
+$config['assets_url']    = $baseUrl . "/";        // untuk URL asset CMS
+$config['assets_url_core']    = 'https://localhost';  // untuk URL API core
+$config['url_api_layanan']    = 'http://202.6.233.66/mocoplus/sms/jetset_login_api.php';
+$config['url_api_notif']      = 'http://202.6.233.66/mocoplus/sms/api_sms_notif_ht.php';
+
 
 /*
 |--------------------------------------------------------------------------
@@ -60,7 +62,7 @@ $config['index_page'] = '';
 |
 | WARNING: If you set this to 'PATH_INFO', URIs will always be URL-decoded!
 */
-$config['uri_protocol']	= 'REQUEST_URI';
+$config['uri_protocol']    = 'REQUEST_URI';
 
 /*
 |--------------------------------------------------------------------------
@@ -84,7 +86,7 @@ $config['url_suffix'] = '';
 | than english.
 |
 */
-$config['language']	= 'english';
+$config['language']    = 'english';
 
 /*
 |--------------------------------------------------------------------------
@@ -410,11 +412,11 @@ $config['sess_regenerate_destroy'] = FALSE;
 |       'cookie_httponly') will also affect sessions.
 |
 */
-$config['cookie_prefix']	= '';
-$config['cookie_domain']	= '';
-$config['cookie_path']		= '/';
-$config['cookie_secure']	= FALSE;
-$config['cookie_httponly'] 	= FALSE;
+$config['cookie_prefix']    = '';
+$config['cookie_domain']    = '';
+$config['cookie_path']        = '/';
+$config['cookie_secure']    = FALSE;
+$config['cookie_httponly']     = FALSE;
 
 /*
 |--------------------------------------------------------------------------

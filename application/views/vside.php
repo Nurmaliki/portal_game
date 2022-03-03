@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="<?php echo $this->config->item('assets_url'); ?>assets/bower_components/jvectormap/jquery-jvectormap.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?php echo $this->config->item('assets_url'); ?>assets/dist/css/AdminLTE.min.css">
- <link rel="stylesheet" href="<?php echo $this->config->item('assets_url'); ?>assets/dist/css/csstambahan.css">
+  <link rel="stylesheet" href="<?php echo $this->config->item('assets_url'); ?>assets/dist/css/csstambahan.css">
 
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
@@ -119,35 +119,14 @@
 </head>
 
 <body test class="hold-transition   sidebar-collapse">
-  <!-- <div class="wrapper"> -->
-    <?php
-    // print_r($_SESSION);
-    // if ( $_SESSION['role'] == ''){
+  <?php
 
-    //   $this->session->set_flashdata('session_habis', 'Silakan login kembali');
-    //   header("location: ".$this->config->item('base_url')."login/logout");
+  echo $content;
+  ?>
 
-    // }
-    // $this->session->set_flashdata('msgalert', 'Update success');
-    // print_r($_SESSION["user_data"]);
-    // echo $header;
-    // if ($_SESSION["user_data"]["status"] == 1) {
-    // echo $left_coloumn;
-    echo $content;
-    // echo $footer;
-    //}else{ 
-    ?>
-    <!-- <div style="padding-top: 200px;text-align: center;background: #fff;font-weight: bold;font-size: 18px;"> -->
-    <!-- <center> Akun anda sudah dinonaktifkan, Silahkan hubungi pihak yang terkait untuk info lebih lanjut</center> -->
-    <!-- </div> -->
-    <?php
-    // }
-    //echo $control_sidebar;
-    ?>
-    <!-- Add the sidebar's background. This div must be placed
-       immediately after the control sidebar -->
-    <!--<div class="control-sidebar-bg"></div>-->
-  <!-- </div> -->
+  <?php
+  ?>
+
   <!-- ./wrapper -->
   <!-- FastClick -->
   <script src="<?php echo $this->config->item('assets_url'); ?>assets/bower_components/fastclick/lib/fastclick.js"></script>

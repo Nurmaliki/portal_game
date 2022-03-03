@@ -1,68 +1,70 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Home extends MY_Controller {
+class Home extends MY_Controller
+{
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
-	public function __construct(){
+    /**
+     * Index Page for this controller.
+     *
+     * Maps to the following URL
+     * 		http://example.com/index.php/welcome
+     *	- or -
+     * 		http://example.com/index.php/welcome/index
+     *	- or -
+     * Since this controller is set as the default controller in
+     * config/routes.php, it's displayed at http://example.com/
+     *
+     * So any other public methods not prefixed with an underscore will
+     * map to /index.php/welcome/<method_name>
+     * @see https://codeigniter.com/user_guide/general/urls.html
+     */
+    public function __construct()
+    {
         parent::__construct();
-        $this->load->model ('history_model');
-        $this->load->model ('appusers_model');
+        $this->load->model('history_model');
+        $this->load->model('appusers_model');
         $this->load->model('member_model');
         $this->load->library('excel');
         $this->load->model('crud_model');
-	
 
-	$this->load->model ('appuserstoken_model');
+
+        $this->load->model('appuserstoken_model');
         $enc = new EncDec();
 
-        $id_user = $enc->stringEncryption("decrypt",$_GET['access'])->username;
+        $id_user = $enc->stringEncryption("decrypt", $_GET['access'])->username;
         $user_token = $this->appuserstoken_model->select_appusers('', $id_user);
 
         if ($this->session->userdata['user_data_web']['token'] != $user_token[0]['token']) {
-        
-        	 header("location: ".$this->config->item('base_url')."login/logout");
-        	die();
+
+            header("location: " . $this->config->item('base_url') . "login/logout");
+            die();
         }
 
         error_reporting(0);
-	}
+    }
     public function index()
-	{
+    {
         $enc = new EncDec();
-        if(!isset($_GET['access']) || !$enc->stringEncryption("decrypt",$_GET['access'])){			
-			// $data["heading"] = "404 Page Not Found";
-			// $data["message"] = "The page you requested was not found ";
+        if (!isset($_GET['access']) || !$enc->stringEncryption("decrypt", $_GET['access'])) {
+            // $data["heading"] = "404 Page Not Found";
+            // $data["message"] = "The page you requested was not found ";
             // $this->load->view('errors/html/error_404',$data);
-            header("location: ".$this->config->item('base_url')."login/accessExpired");
-		}else{
-        $konfigpoin = $this->appusers_model->get_konfig('login');
-        $data['data']       = $this->appusers_model->get_game();
-        $data['bonus_poin']       = $konfigpoin[0]['poin'];
-        // $parseData['header']                = $this->load->view('header', '', true);
-        // $parseData['left_coloumn']          = $this->load->view('left_coloumn', '', true);
-        $parseData['content']               = $this->load->view('content/home', $data, true);
-        // $parseData['footer']                = $this->load->view('footer', '', true);
-        // $parseData['control_sidebar']       = $this->load->view('control_sidebar', '', true);
-        $this->load->view('vside', $parseData);
+            header("location: " . $this->config->item('base_url') . "login/accessExpired");
+        } else {
+            $konfigpoin = $this->appusers_model->get_konfig('login');
+            $data['data']       = $this->appusers_model->get_game();
+            $data['bonus_poin']       = $konfigpoin[0]['poin'];
+            // $parseData['header']                = $this->load->view('header', '', true);
+            // $parseData['left_coloumn']          = $this->load->view('left_coloumn', '', true);
+            $parseData['content']               = $this->load->view('new_game/content/home', $data, true);
+            // $parseData['footer']                = $this->load->view('footer', '', true);
+            // $parseData['control_sidebar']       = $this->load->view('control_sidebar', '', true);
+            $this->load->view('new_game/vside', $parseData);
         }
     }
     public function detail_game_play($id)
-	{
+    {
         // echo "detail game Play".$id;
 
         $konfigpoin = $this->appusers_model->get_konfig('main');
@@ -99,11 +101,11 @@ class Home extends MY_Controller {
         $this->session->userdata['user_data_web']['poin'] = $poin_user;
         $this->crud_model->update("g_appusers", $data_user, $_SESSION["user_data_web"]["id"]);
 
-        
-       $detail_game = $this->appusers_model->get_game_detail($id);
+
+        $detail_game = $this->appusers_model->get_game_detail($id);
         // echo $poin_user."poin user";
         // print_r($detail_game);
-        echo "<script type='text/javascript' language='Javascript'>window.open('".$detail_game[0]['video']."');</script>";
+        echo "<script type='text/javascript' language='Javascript'>window.open('" . $detail_game[0]['video'] . "');</script>";
         // header("location: " .$detail_game[0]['video']);
         die;
     }
@@ -119,11 +121,11 @@ class Home extends MY_Controller {
         // $user_apps       = $this->appusers_model->select_appusers($_SESSION["user_data_web"]["id"], '');
 
 
-     
+
 
 
         $data['data'] = $this->appusers_model->get_game_detail($id)[0];
-       
+
 
         $data['data']       = $this->appusers_model->get_game();
 
@@ -132,10 +134,5 @@ class Home extends MY_Controller {
         // $parseData['footer']                = $this->load->view('footer', '', true);
         // $parseData['control_sidebar']       = $this->load->view('control_sidebar', '', true);
         $this->load->view('vside', $parseData);
-
-      
     }
-    
-    
-   
 }
