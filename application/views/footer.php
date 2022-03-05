@@ -11,8 +11,8 @@ $(document).ready(function(){
 });
 </script> -->
 <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-      <b>Version</b> 1
-    </div>
-    <strong>Copyright &copy; <?php echo date('Y'); ?> Gaspol Game.</strong> 
-  </footer>
+  <div class="pull-right hidden-xs">
+    <b>Version</b> 1
+  </div>
+  <strong>Copyright &copy; <?php echo date('Y'); ?> Jetset Game.</strong>
+</footer>

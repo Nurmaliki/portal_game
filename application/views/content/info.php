@@ -77,7 +77,7 @@
         <div id="infoprotest" class="row" style="padding:10%">
 
             <p style="    font-size: 15px;">
-                Layanan GASPOL : <br>
+                Layanan JETSET : <br>
 
 
             </p>
@@ -86,7 +86,7 @@
                 <li>Layanan Games berbasis Portal khusus pelanggan Three</li>
                 <li>Tarif Rp. 1100/2hr</li>
                 <li>Pelanggan dapat mengumpulkan poin untuk mendapatkan Hadiah yang diinginkan.</li>
-                <li>Akses ke portal Gaspol untuk tingkatkan poin.</li>
+                <li>Akses ke portal Jetset untuk tingkatkan poin.</li>
                 <li>Informasi lebih lanjut bisa hubungi CS: 02156963403</li>
             </ul>
 

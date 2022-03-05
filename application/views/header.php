@@ -3,7 +3,7 @@
   <!-- Logo -->
   <a href="<?php echo $this->config->item('base_url'); ?>" class="logo">
     <span class="logo-mini"><b>A</b>LT</span>
-    <span class="logo-lg"><b>Gaspol Game</b></span>
+    <span class="logo-lg"><b>JETSET Game</b></span>
   </a>
 
   <!-- Header Navbar: style can be found in header.less -->
@@ -148,7 +148,9 @@
           </ul>
         </li>
         <!-- Tasks: style can be found in dropdown.less -->
-        <li class="dropdown tasks-menu <?php if ($this->uri->segment(1) == 'hadiah'){echo "active";} ?>">
+        <li class="dropdown tasks-menu <?php if ($this->uri->segment(1) == 'hadiah') {
+                                          echo "active";
+                                        } ?>">
           <a href="<?php echo $this->config->item('base_url');
                     ?>hadiah" class="dropdown-toggle" data-toggle="">
             <!-- <i class="fa fa-flag-o"></i> -->
@@ -156,7 +158,7 @@
             Hadiah
           </a>
 
-        </li >
+        </li>
         <!-- User Account: style can be found in dropdown.less -->
         <!-- <li>
           <a href="#" data-toggle="control-sidebar"><i class="fa fa-poin"></i>

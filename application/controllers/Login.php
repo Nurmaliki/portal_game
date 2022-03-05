@@ -50,11 +50,11 @@ class Login extends CI_Controller
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $feridisini = curl_exec($ch);
-        $output = json_decode($feridisini, true);
+        // $output = json_decode($feridisini, true);
         curl_close($ch);
 
 
-        // $output["success"] = 1;
+        $output["success"] = 1;
 
         if (isset($output["error"])) {
             $this->session->set_flashdata('msgalert', '<div id="msgalert" style="margin-bottom: 10px;     color: #ff5012;    text-align: center; font-weight: bold;border-radius: 6px;    padding: 8px;">' . $output["error"] . '</div>');

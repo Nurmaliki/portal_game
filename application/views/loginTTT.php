@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>GASPOL</title>
+  <title>JETSET</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -47,7 +47,8 @@
 </head>
 
 <!-- <body class="hold-transition login-page"> -->
-  <body class="hold-transition login-page" style="    background:#0e98da!important;">
+
+<body class="hold-transition login-page" style="    background:#0e98da!important;">
   <div class="login-box justify-content-center align-items-center">
     <div class="login-logo">
       <img style="    margin-top: 1px;" width="300" height="250" src="<?php echo $this->config->item('assets_url'); ?>assets/images/imggame/logo.png" width="250" height="150"><br>
@@ -90,8 +91,8 @@
         <div class="form-group has-feedback mt-5 text-center">
           <a class="btn btn-info" href="sms:3985&body=REG+GASPOL">Register</a>
         </div>
- 	<div class="form-group has-feedback mt-5 text-center">
-          <img width="50" src="<?php echo $this->config->item('assets_url'); ?>assets/images/imggame/3.png" >
+        <div class="form-group has-feedback mt-5 text-center">
+          <img width="50" src="<?php echo $this->config->item('assets_url'); ?>assets/images/imggame/3.png">
         </div>
 
 

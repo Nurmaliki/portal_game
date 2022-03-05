@@ -113,7 +113,7 @@
                             <li><a href="page-checkout.html">Checkout</a></li>
                         </ul>
                     </li> -->
-                    <!-- <li><a href="settings.html"><i class="bi bi-gear"></i>Settings</a></li> -->
+                    <li><a href="<?php echo $this->config->item('base_url'); ?>overview?access=<?php echo $_GET['access']; ?>"><i class="bi bi-info-square"></i>Overview</a></li>
                     <li>
                         <div class="night-mode-nav"><i class="bi bi-moon"></i>Night Mode
                             <div class="form-check form-switch">

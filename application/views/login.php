@@ -81,7 +81,7 @@
         </div>
         <div class="form-group has-feedback mt-5 text-center">
           <button style="  background-color: #00b894;   color: white;  font-weight: bold;     float: left;" class="btn text-cente btn btn-infor" type="submit"> Login </button>
-          <a style="background-color: #fdcb6e;    color: white; font-weight: bold;  border: none;    float: right;" class="btn btn-info" href="sms:93111?body=GASPOL">Register</a>
+          <a style="background-color: #fdcb6e;    color: white; font-weight: bold;  border: none;    float: right;" class="btn btn-info" href="sms:93111?body=JETSET">Register</a>
 
         </div>
 
